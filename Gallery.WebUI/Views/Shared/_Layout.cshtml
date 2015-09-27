@@ -1,0 +1,36 @@
+﻿@{
+  Layout = null;
+}
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+
+  @if (!IsSectionDefined("Title"))
+  {
+    <title>
+      Title
+    </title>
+  }
+  else
+  {
+    <title>
+      @RenderSection("Title", false)
+    </title>
+  }
+
+  <link type="text/css" rel="stylesheet" href="~/Content/styles/paper.css" />
+  <link type="text/css" rel="stylesheet" href="~/Content/font-awesome/css/font-awesome.css" />
+  @RenderSection("Styles", false)
+
+  <script type="text/javascript" src="~/Content/jquery/dist/jquery.js"></script>
+  @RenderSection("Scripts", false)
+</head>
+<body>
+  @RenderSection("Navbar", false)
+  @RenderSection("Content", false)
+</body>
+</html>

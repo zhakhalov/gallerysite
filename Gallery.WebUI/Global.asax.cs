@@ -18,7 +18,7 @@ namespace Gallery.WebUI
 
         void Application_AuthenticateRequest()
         {
-            if (User.Identity.IsAuthenticated)
+            if (User != null && User.Identity.IsAuthenticated)
             {
                 
             }

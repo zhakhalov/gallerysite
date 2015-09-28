@@ -48,13 +48,26 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Entities\Category.cs" />
     <Compile Include="GalleryContext.cs" />
-    <Compile Include="Models\User.cs" />
+    <Compile Include="Entities\User.cs" />
+    <Compile Include="Migrations\201509282300363_Add Category.cs" />
+    <Compile Include="Migrations\201509282300363_Add Category.Designer.cs">
+      <DependentUpon>201509282300363_Add Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="App.config" />
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201509282300363_Add Category.resx">
+      <DependentUpon>201509282300363_Add Category.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

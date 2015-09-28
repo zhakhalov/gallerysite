@@ -1,5 +1,5 @@
-﻿using Gallery.Models;
-using Gallery.Models.Models;
+﻿using Gallery.DAL.Repositories;
+using Gallery.Entities.Entities;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -13,6 +13,8 @@ namespace Gallery.WebUI.Controllers
         [Route("")]
         public ActionResult Index()
         {
+            UserRepository repo = new UserRepository();
+            IEnumerable<User> users = repo.GetAll();
             return View();
         }
     }

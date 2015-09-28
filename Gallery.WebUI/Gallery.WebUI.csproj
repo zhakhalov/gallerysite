@@ -389,9 +389,13 @@
     <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Gallery.Models\Gallery.Models.csproj">
+    <ProjectReference Include="..\Gallery.DAL\Gallery.DAL.csproj">
+      <Project>{7e323bc3-9dab-456d-8280-e9337f92c603}</Project>
+      <Name>Gallery.DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Gallery.Models\Gallery.Entities.csproj">
       <Project>{7e9a9bd2-ed76-4f36-8f10-1ed1c76d52d7}</Project>
-      <Name>Gallery.Models</Name>
+      <Name>Gallery.Entities</Name>
     </ProjectReference>
   </ItemGroup>
   <PropertyGroup>

@@ -1,19 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Gallery.Entities.Entities
 {
-    public class Category
+    public class Tag
     {
         [Key]
-        public int CategoryId { get; set; }
+        public int TagId { get; set; }
         [Required]
-        [MaxLength(255)]
+        [MaxLength(32)]
         public string Title { get; set; }
+
+        public virtual ICollection<Image> Images { get; set; }
     }
 }

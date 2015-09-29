@@ -7,8 +7,8 @@
     <ProjectGuid>{7E9A9BD2-ED76-4F36-8F10-1ED1C76D52D7}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>Gallery.Models</RootNamespace>
-    <AssemblyName>Gallery.Models</AssemblyName>
+    <RootNamespace>Gallery.Entities</RootNamespace>
+    <AssemblyName>Gallery.Entities</AssemblyName>
     <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
   </PropertyGroup>
@@ -49,11 +49,21 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Entities\Category.cs" />
+    <Compile Include="Entities\Image.cs" />
+    <Compile Include="Entities\Tag.cs" />
     <Compile Include="GalleryContext.cs" />
     <Compile Include="Entities\User.cs" />
     <Compile Include="Migrations\201509282300363_Add Category.cs" />
     <Compile Include="Migrations\201509282300363_Add Category.Designer.cs">
       <DependentUpon>201509282300363_Add Category.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201509292117112_ImageAndTag.cs" />
+    <Compile Include="Migrations\201509292117112_ImageAndTag.Designer.cs">
+      <DependentUpon>201509292117112_ImageAndTag.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201509292119097_ImageToManyTags.cs" />
+    <Compile Include="Migrations\201509292119097_ImageToManyTags.Designer.cs">
+      <DependentUpon>201509292119097_ImageToManyTags.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -67,6 +77,12 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201509282300363_Add Category.resx">
       <DependentUpon>201509282300363_Add Category.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509292117112_ImageAndTag.resx">
+      <DependentUpon>201509292117112_ImageAndTag.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201509292119097_ImageToManyTags.resx">
+      <DependentUpon>201509292119097_ImageToManyTags.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

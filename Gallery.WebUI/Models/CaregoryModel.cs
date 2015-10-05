@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Gallery.WebUI.Models.ValidationAttributes;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
@@ -11,6 +12,7 @@ namespace Gallery.WebUI.Models
     {
         [DisplayName("Title")]
         [Required(ErrorMessage="This field is required")]
+        [UniqueCategoryTitle(ErrorMessage="Category with this title already exists")]
         public string Title { get; set; }
         public HttpPostedFile Image { get; set; }
     }

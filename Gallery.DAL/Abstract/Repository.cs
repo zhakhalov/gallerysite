@@ -3,6 +3,7 @@ using System;
 using System.Collections.Generic;
 using System.Data.Entity;
 using System.Linq;
+using System.Linq.Expressions;
 using System.Text;
 using System.Threading.Tasks;
 
@@ -11,16 +12,30 @@ namespace Gallery.DAL.Abstract
     public class Repository<T> : IRepository<T> where T : class
     {
 
-        public IEnumerable<T> GetAll()
+        public IEnumerable<T> FindAll()
         {
-            Task<IEnumerable<T>> task = this.GetAllAsync();
+            Task<IEnumerable<T>> task = this.FindAllAsync();
             task.Wait();
             return task.Result;
         }
 
-        public T GetById(int id)
+        public IEnumerable<T> FindAll(Expression<Func<T, bool>> predicate)
         {
-            Task<T> task = this.GetByIdAsync(id);
+            Task<IEnumerable<T>> task = this.FindAllAsync(predicate);
+            task.Wait();
+            return task.Result;
+        }
+
+        public T FindOne(int id)
+        {
+            Task<T> task = this.FindOneAsync(id);
+            task.Wait();
+            return task.Result;
+        }
+
+        public T FindOne(Expression<Func<T, bool>> predicate)
+        {
+            Task<T> task = this.FindOneAsync(predicate);
             task.Wait();
             return task.Result;
         }
@@ -44,7 +59,7 @@ namespace Gallery.DAL.Abstract
         }
 
 
-        public async Task<IEnumerable<T>> GetAllAsync()
+        public async Task<IEnumerable<T>> FindAllAsync()
         {
             using (var ctx = new GalleryContext())
             {
@@ -52,11 +67,27 @@ namespace Gallery.DAL.Abstract
             }
         }
 
-        public async Task<T> GetByIdAsync(int id)
+        public async Task<IEnumerable<T>> FindAllAsync(Expression<Func<T, bool>> predicate)
+        {
+            using (var ctx = new GalleryContext())
+            {
+                return await ctx.Set<T>().Where(predicate).ToListAsync();
+            }
+        }
+
+        public async Task<T> FindOneAsync(int id)
         {
             using (var ctx = new GalleryContext())
             {
                 return await ctx.Set<T>().FindAsync(id);
+            }
+        }
+
+        public async Task<T> FindOneAsync(Expression<Func<T, bool>> predicate)
+        {
+            using (var ctx = new GalleryContext())
+            {
+                return await ctx.Set<T>().FirstAsync(predicate);
             }
         }
 

@@ -1,23 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
+using System.Linq.Expressions;
 using System.Threading.Tasks;
-
 namespace Gallery.DAL.Abstract
 {
     public interface IRepository<T> where T : class
     {
-        IEnumerable<T> GetAll();
-        T GetById(int id);
         void Add(T entity);
-        void Remove(T entity);
-        void Update(T entity);
-
-        Task<IEnumerable<T>> GetAllAsync();
-        Task<T> GetByIdAsync(int id);
         Task AddAsync(T entity);
-        Task RemoveAsync(T entit);
+        IEnumerable<T> FindAll();
+        IEnumerable<T> FindAll(Expression<Func<T, bool>> predicate);
+        Task<IEnumerable<T>> FindAllAsync();
+        Task<IEnumerable<T>> FindAllAsync(Expression<Func<T, bool>> predicate);
+        T FindOne(int id);
+        T FindOne(Expression<Func<T, bool>> predicate);
+        Task<T> FindOneAsync(int id);
+        Task<T> FindOneAsync(Expression<Func<T, bool>> predicate);
+        void Remove(T entity);
+        Task RemoveAsync(T entity);
+        void Update(T entity);
         Task UpdateAsync(T entity);
     }
 }

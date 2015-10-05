@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace Gallery.DAL.Abstract.Repositories
 {
-    interface ITagRepository : IRepository<Tag>
+    public interface ITagRepository : IRepository<Tag>
     {
     }
 }

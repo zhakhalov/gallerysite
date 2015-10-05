@@ -11,9 +11,7 @@ namespace Gallery.Entities.Entities
     {
         [Key]
         public int ImageId { get; set; }
-        [Required]
         public string ImagePath { get; set; }
-        [Required]
         public string ImageUrl { get; set; }
         [Required]
         [MaxLength(64)]

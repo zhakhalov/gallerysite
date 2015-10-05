@@ -380,6 +380,13 @@
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Middlewares\MyMiddleware.cs" />
+    <Compile Include="Models\CaregoryModel.cs" />
+    <Compile Include="Models\ImageModel.cs" />
+    <Compile Include="Models\LoginModel.cs" />
+    <Compile Include="Models\RegistrationModel.cs" />
+    <Compile Include="Models\ValidationAttributes\UniqueCategoryTitleAttribute.cs" />
+    <Compile Include="Models\ValidationAttributes\UniqueEmailAttribute.cs" />
+    <Compile Include="Models\ValidationAttributes\UniqueUsernameAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -399,7 +406,6 @@
   <ItemGroup>
     <Folder Include="App_Data\" />
     <Folder Include="fonts\" />
-    <Folder Include="Models\" />
     <Folder Include="Scripts\" />
   </ItemGroup>
   <ItemGroup>

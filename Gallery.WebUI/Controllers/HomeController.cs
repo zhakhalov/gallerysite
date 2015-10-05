@@ -1,5 +1,6 @@
-﻿using Gallery.DAL.Repositories;
+﻿using Gallery.DAL.Abstract.Repositories;
 using Gallery.Entities.Entities;
+using Microsoft.Practices.Unity;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -11,11 +12,13 @@ namespace Gallery.WebUI.Controllers
 {
     public class HomeController : Controller
     {
+        [Dependency]
+        public IUserRepository UserRepository { private get; set; }
+
         [Route("")]
         public async Task<ActionResult> Index()
         {
-            UserRepository repo = new UserRepository();
-            IEnumerable<User> users = await repo.GetAllAsync();
+            IEnumerable<User> users = await UserRepository.GetAllAsync();
             return View();
         }
     }

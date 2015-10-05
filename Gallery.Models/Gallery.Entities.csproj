@@ -65,6 +65,10 @@
     <Compile Include="Migrations\201509292119097_ImageToManyTags.Designer.cs">
       <DependentUpon>201509292119097_ImageToManyTags.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201510052131113_categoryimage.cs" />
+    <Compile Include="Migrations\201510052131113_categoryimage.Designer.cs">
+      <DependentUpon>201510052131113_categoryimage.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -83,6 +87,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Migrations\201509292119097_ImageToManyTags.resx">
       <DependentUpon>201509292119097_ImageToManyTags.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201510052131113_categoryimage.resx">
+      <DependentUpon>201510052131113_categoryimage.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

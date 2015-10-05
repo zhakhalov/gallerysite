@@ -14,6 +14,7 @@ namespace Gallery.WebUI
         {
             AreaRegistration.RegisterAllAreas();
             RouteConfig.RegisterRoutes(RouteTable.Routes);
+            UnityConfig.RegisterComponents();
         }
 
         void Application_AuthenticateRequest()

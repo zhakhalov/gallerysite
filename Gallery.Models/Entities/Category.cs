@@ -15,5 +15,8 @@ namespace Gallery.Entities.Entities
         [Required]
         [MaxLength(255)]
         public string Title { get; set; }
+        public string Slug { get; set; }
+        public string ImagePath { get; set; }
+        public string ImageUrl { get; set; }
     }
 }

@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2013
 VisualStudioVersion = 12.0.40629.0
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gallery.Tests", "Gallery.Tests\Gallery.Tests.csproj", "{31A79067-0546-4ECF-971C-63147A25DEB0}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gallery.WebUI", "Gallery.WebUI\Gallery.WebUI.csproj", "{B9B7CEF1-1106-4C10-AF21-CB140B3ED33C}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Gallery.Entities", "Gallery.Models\Gallery.Entities.csproj", "{7E9A9BD2-ED76-4F36-8F10-1ED1C76D52D7}"
@@ -17,10 +15,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{31A79067-0546-4ECF-971C-63147A25DEB0}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{31A79067-0546-4ECF-971C-63147A25DEB0}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{31A79067-0546-4ECF-971C-63147A25DEB0}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{31A79067-0546-4ECF-971C-63147A25DEB0}.Release|Any CPU.Build.0 = Release|Any CPU
 		{B9B7CEF1-1106-4C10-AF21-CB140B3ED33C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{B9B7CEF1-1106-4C10-AF21-CB140B3ED33C}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B9B7CEF1-1106-4C10-AF21-CB140B3ED33C}.Release|Any CPU.ActiveCfg = Release|Any CPU

@@ -15,7 +15,7 @@ namespace Gallery.WebUI.Controllers
         [Dependency]
         public IUserRepository UserRepository { private get; set; }
 
-        [Route("")]
+        [Route("", Name = "Index")]
         public async Task<ActionResult> Index()
         {
             IEnumerable<User> users = await UserRepository.FindAllAsync();

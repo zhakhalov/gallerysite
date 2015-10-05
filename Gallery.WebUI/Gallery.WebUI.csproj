@@ -375,6 +375,9 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="Controllers\AuthenticationController.cs">
+      <SubType>Code</SubType>
+    </Compile>
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
@@ -382,7 +385,10 @@
     <Compile Include="Models\CaregoryModel.cs" />
     <Compile Include="Models\ImageModel.cs" />
     <Compile Include="Models\LoginModel.cs" />
-    <Compile Include="Models\RegistrationModel.cs" />
+    <Compile Include="Models\RegistrationModel.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Models\ValidationAttributes\EqualsToAttribute.cs" />
     <Compile Include="Models\ValidationAttributes\UniqueCategoryTitleAttribute.cs" />
     <Compile Include="Models\ValidationAttributes\UniqueEmailAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -394,6 +400,7 @@
     <Content Include="Views\_ViewStart.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Authentication\Register.cshtml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

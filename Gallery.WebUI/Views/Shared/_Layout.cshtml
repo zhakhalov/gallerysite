@@ -30,7 +30,11 @@
   @RenderSection("Scripts", false)
 </head>
 <body>
-  @RenderSection("Navbar", false)
-  @RenderSection("Content", false)
+  <nav class="navbar">
+    @RenderSection("Navbar", false)
+  </nav>
+  <section class ="container-fluid">
+    @RenderSection("Content", false)
+  </section>    
 </body>
 </html>

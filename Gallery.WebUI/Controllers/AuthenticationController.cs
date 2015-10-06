@@ -23,7 +23,7 @@ namespace Gallery.WebUI.Controllers
             return this.RedirectToRoute("RegisterSuccess");
         }
 
-        [Route("register", Name = "RegisterSuccess")]
+        [Route("register/success", Name = "RegisterSuccess")]
         public ActionResult RegisterSuccess()
         {
             return this.View("RegisterSuccess");

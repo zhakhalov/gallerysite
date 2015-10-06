@@ -21,15 +21,18 @@ namespace Gallery.WebUI.Models
         [DisplayName("E-mail")]
         [Required(ErrorMessage = "This field is required")]
         [EmailAddress(ErrorMessage = "Invalid Email Address")]
+        [DataType(DataType.EmailAddress)]
         public string Email { get; set; }
 
         [DisplayName("Password")]
         [Required(ErrorMessage = "This field is required")]
+        [DataType(DataType.Password)]
         public string Password { get; set; }
 
         [DisplayName("Re-enter password")]
         [Required(ErrorMessage = "This field is required")]
         [EqualsTo("Password", ErrorMessage = "Password does not match confirmation")]
+        [DataType(DataType.Password)]
         public string RePassword { get; set; }
     }
 }

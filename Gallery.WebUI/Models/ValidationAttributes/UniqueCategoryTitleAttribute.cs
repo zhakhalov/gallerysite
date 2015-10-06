@@ -12,8 +12,7 @@ namespace Gallery.WebUI.Models.ValidationAttributes
     {
         public override bool IsValid(object value)
         {
-            DependencyResolver.Current.GetService<ICategoryRepository>().FindOne(entry => entry.Title == value.ToString());
-            return true;
+            return null == DependencyResolver.Current.GetService<ICategoryRepository>().FindOne(entry => entry.Title == value.ToString());
         }
     }
 }

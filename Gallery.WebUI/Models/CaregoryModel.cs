@@ -10,10 +10,12 @@ namespace Gallery.WebUI.Models
 {
     public class CaregoryModel
     {
-        [DisplayName("Title")]
+        [DisplayName("Category Title")]
         [Required(ErrorMessage="This field is required")]
         [UniqueCategoryTitle(ErrorMessage="Category with this title already exists")]
         public string Title { get; set; }
+
+        [DisplayName("Category Image")]
         public HttpPostedFile Image { get; set; }
     }
 }

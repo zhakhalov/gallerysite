@@ -13,12 +13,12 @@ namespace Gallery.WebUI.Controllers
     public class HomeController : Controller
     {
         [Dependency]
-        public IUserRepository UserRepository { private get; set; }
+        public ICategoryRepository CategoryRepository { private get; set; }
 
         [Route("", Name = "Index")]
         public async Task<ActionResult> Index()
         {
-            IEnumerable<User> users = await UserRepository.FindAllAsync();
+            IEnumerable<Category> categories = await CategoryRepository.FindAllAsync(0, 32);
             return View();
         }
     }

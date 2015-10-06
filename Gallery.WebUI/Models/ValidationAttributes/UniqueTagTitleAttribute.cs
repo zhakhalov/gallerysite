@@ -8,11 +8,11 @@ using System.Web.Mvc;
 
 namespace Gallery.WebUI.Models.ValidationAttributes
 {
-    public class UniqueEmailAttribute : ValidationAttribute
+    public class UniqueTagTitleAttribute : ValidationAttribute
     {
         public override bool IsValid(object value)
         {
-            return null == DependencyResolver.Current.GetService<IUserRepository>().FindOne(entry => entry.Email == value.ToString());
+            return null == DependencyResolver.Current.GetService<ITagRepository>().FindOne(entry => entry.Title == value.ToString());
         }
     }
 }

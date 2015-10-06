@@ -375,22 +375,33 @@
   <ItemGroup>
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\UnityConfig.cs" />
+    <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\AuthenticationController.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Controllers\CategoryController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\ImageController.cs" />
+    <Compile Include="Controllers\TagController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\CaregoryModel.cs" />
     <Compile Include="Models\ImageModel.cs" />
+    <Compile Include="Models\LocalizationResources\CategoryResource.cs" />
+    <Compile Include="Models\LocalizationResources\ImageResource.cs" />
+    <Compile Include="Models\LocalizationResources\LoginResource.cs" />
+    <Compile Include="Models\LocalizationResources\RegistrationResource.cs" />
+    <Compile Include="Models\LocalizationResources\TagResource.cs" />
     <Compile Include="Models\LoginModel.cs" />
     <Compile Include="Models\RegistrationModel.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="Models\TagModel.cs" />
     <Compile Include="Models\ValidationAttributes\EqualsToAttribute.cs" />
     <Compile Include="Models\ValidationAttributes\UniqueCategoryTitleAttribute.cs" />
     <Compile Include="Models\ValidationAttributes\UniqueEmailAttribute.cs" />
+    <Compile Include="Models\ValidationAttributes\UniqueTagTitleAttribute.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -414,6 +425,10 @@
     <Folder Include="fonts\" />
     <Folder Include="Middlewares\" />
     <Folder Include="Scripts\" />
+    <Folder Include="Views\Admin\" />
+    <Folder Include="Views\Category\" />
+    <Folder Include="Views\Image\" />
+    <Folder Include="Views\Tag\" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Gallery.DAL\Gallery.DAL.csproj">

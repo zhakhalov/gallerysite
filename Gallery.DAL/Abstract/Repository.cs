@@ -26,6 +26,20 @@ namespace Gallery.DAL.Abstract
             return task.Result;
         }
 
+        public IEnumerable<T> FindAll(int skip, int take)
+        {
+            Task<IEnumerable<T>> task = this.FindAllAsync(skip, take);
+            task.Wait();
+            return task.Result;
+        }
+
+        public IEnumerable<T> FindAll(Expression<Func<T, bool>> predicate, int skip, int take)
+        {
+            Task<IEnumerable<T>> task = this.FindAllAsync(predicate, skip, take);
+            task.Wait();
+            return task.Result;
+        }
+
         public T FindOne(int id)
         {
             Task<T> task = this.FindOneAsync(id);
@@ -75,6 +89,22 @@ namespace Gallery.DAL.Abstract
             }
         }
 
+        public async Task<IEnumerable<T>> FindAllAsync(int skip, int take)
+        {
+            using (var ctx = new GalleryContext())
+            {
+                return await ctx.Set<T>().Skip(skip).Take(take).ToListAsync();
+            }
+        }
+
+        public async Task<IEnumerable<T>> FindAllAsync(Expression<Func<T, bool>> predicate, int skip, int take)
+        {
+            using (var ctx = new GalleryContext())
+            {
+                return await ctx.Set<T>().Where(predicate).Skip(skip).Take(take).ToListAsync();
+            }
+        }
+
         public async Task<T> FindOneAsync(int id)
         {
             using (var ctx = new GalleryContext())
@@ -87,7 +117,7 @@ namespace Gallery.DAL.Abstract
         {
             using (var ctx = new GalleryContext())
             {
-                return await ctx.Set<T>().FirstAsync(predicate);
+                return await ctx.Set<T>().FirstOrDefaultAsync(predicate);
             }
         }
 
